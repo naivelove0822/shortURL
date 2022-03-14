@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const port = 3000
 const mongoose = require('mongoose')
-
+const exphbs = require('express-handlebars')
 mongoose.connect('mongodb://localhost/shortURL')
 
 const db = mongoose.connection 
@@ -15,8 +15,11 @@ db.once('open', () => {
   console.log('mongodb connected!')
 })
 
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
+app.set('view engine', 'handlebars')
+
 app.get('/', (req, res) => {
-  res.send('This is test')
+  res.render('index')
 })
 
 app.listen(port, () => {
