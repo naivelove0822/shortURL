@@ -30,7 +30,7 @@ router.get('/:shorturl', (req, res) => {
     .then(data =>
       res.redirect(`${data.url}`)
     )
-    .catch(err => console.log(err))
+    .catch(error => console.log(error))
 })
 
 module.exports = router

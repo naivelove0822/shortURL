@@ -1,0 +1,6 @@
+https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText => Clipboard.writeText()用法
+https://developer.mozilla.org/zh-TW/docs/Web/HTML/Element/script => HTML <script> 用法
+https://www.w3schools.com/howto/howto_js_copy_clipboard.asp => 利用函式實現複製功能
+https://emilywalkdone.blogspot.com/2021/03/alpha-camp2-3.html => 參考實際複製功能用法
+
+Model Answer => 如何將網址變回遠本的網站 / 複製功能用法
