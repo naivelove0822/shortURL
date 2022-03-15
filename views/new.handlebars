@@ -1,0 +1,24 @@
+<div>
+  <img src="https://assets-lighthouse.alphacamp.co/uploads/image/file/16716/ExportedContentImage_00.png"
+    class="rounded mx-auto d-block mb-5 mt-5" alt="..." style="width: 200px;">
+</div>
+
+<div class="alert alert-success col-3 mx-auto" role="alert">
+  <span class="me-2">Your link is:</span>
+  <a href="{{urlshort}}" id="generatedURL" value="{{urlshort}}">{{urlshort}}</a>
+  <button class="btn btn-secondary ml-5" onclick="copyText()">Copy
+    {{!-- 用onclick連結copyText --}}
+  </button>
+  <code>{{url}}</code>
+</div>
+
+{{!-- 用script嵌入程式碼 --}}
+<script>
+  function copyText() {
+    // 尋找對應的節點
+    const copyText = document.getElementById("generatedURL")
+    navigator.clipboard.writeText(copyText.innerText)
+      .then(() => alert(`copied : ${copyText.innerText}`))
+      .catch(error => console.log(error))
+  }
+</script>
