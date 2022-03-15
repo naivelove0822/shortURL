@@ -1,26 +1,16 @@
 const express = require('express')
-const app = express()
 const port = 3000
-const mongoose = require('mongoose')
 const exphbs = require('express-handlebars')
+
 const routes = require('./routes')
+require('./config/mongoose')
 
-mongoose.connect('mongodb://localhost/shortURL')
-const db = mongoose.connection
-
-db.on('error', () => {
-  console.log('mongodb error!')
-})
-
-db.once('open', () => {
-  console.log('mongodb connected!')
-})
+const app = express()
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 
 app.use(express.urlencoded({ extended: true }))
-
 app.use(routes)
 
 
